@@ -12,24 +12,33 @@ function FormText(props) {
     setText(e.target.value);
   };
   return (
-    <div>
-      <h1>{props.heading}</h1>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          Example Here
-        </label>
-        <textarea
-          className="form-control"
-          id="exampleFormControlTextarea1"
-          value={text}
-          onChange={handleOnChangee}
-          rows="8"
-        ></textarea>
+    <>
+      <div className="container">
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            Example Here
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            value={text}
+            onChange={handleOnChangee}
+            rows="8"
+          ></textarea>
+        </div>
+        <button className="btn btn-primary" onClick={handleUpClick}>
+          Convert to uppercase
+        </button>
       </div>
-      <button className="btn btn-primary" onClick={handleUpClick}>
-        Convert to uppercase
-      </button>
-    </div>
+      <div className="container">
+        <h1>Your Text Summary </h1>
+        <p> {text} </p>
+        <p>{text.split(" ").length} Minets To read</p>
+        <h2>Preview</h2>
+        <p> {text} </p>
+      </div>
+    </>
   );
 }
 
