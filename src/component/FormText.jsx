@@ -7,10 +7,17 @@ function FormText(props) {
     var newText = text.toUpperCase();
     setText(newText);
   };
+  const handleLowClick = () => {
+    console.log("handleUpClick is click" + text);
+    var newText = text.toLowerCase();
+    setText(newText);
+  };
   const handleOnChangee = (e) => {
     console.log("On change");
     setText(e.target.value);
   };
+  // const textLength = text.toUpperCase();
+
   return (
     <>
       <div className="container">
@@ -30,13 +37,16 @@ function FormText(props) {
         <button className="btn btn-primary" onClick={handleUpClick}>
           Convert to uppercase
         </button>
+        <button className="btn btn-primary" onClick={handleLowClick}>
+          Convert to uppercase
+        </button>
       </div>
       <div className="container">
         <h1>Your Text Summary </h1>
         <p> {text} </p>
-        <p>{text.split(" ").length} Minets To read</p>
+        {/* <p>{text.split(" ").length} Minets To read</p> */}
         <h2>Preview</h2>
-        <p> {text} </p>
+        {/* <p> {textLength} </p> */}
       </div>
     </>
   );
